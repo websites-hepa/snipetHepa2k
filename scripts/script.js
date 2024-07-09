@@ -26,7 +26,7 @@ let totalV = 0;
 let totalE = 0;
 
 function accionIzquierda() {
-    if (leftSide.classList.contains("vistoLeft") && rightSide.classList.contains("vistoRight")){
+    if (leftSide.classList.contains("vistoLeft") && rightSide.classList.contains("vistoRight") && 1 == 2){
         resetSides();
         videosVistos();
     } else {
@@ -68,7 +68,7 @@ function accionIzquierda() {
 
 function accionDerecha() {
     
-    if (leftSide.classList.contains("vistoLeft") && rightSide.classList.contains("vistoRight")){
+    if (leftSide.classList.contains("vistoLeft") && rightSide.classList.contains("vistoRight") && 1 == 2){
         resetSides();
         videosVistos();
     } else {
