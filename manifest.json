@@ -1,0 +1,33 @@
+{
+     "short_name": "Snipet",
+     "name": "Snipet",
+     "description": "Snipet",
+     "icons": [
+        {
+            "src": "logos/logo_64x64.png",
+            "type": "image/png",
+            "sizes": "64x64"
+        },
+        {
+            "src": "logos/logo_144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "logos/logo_192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "logos/logo_512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+     ],
+     "start_url": "./index.html",
+     "orientation": "portrait",
+     "background_color": "#2a2b2b",
+     "display": "standalone",
+     "scope": "/",
+     "theme_color": "#2a2b2b"
+}
