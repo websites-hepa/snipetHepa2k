@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./logos/logo.png" />
+    <link rel="shortcut icon" href="./logos/hepa.jpg"/>
     <title>Hepa2k</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="manifest" href="manifest.json">
@@ -15,9 +15,7 @@
             <video autoplay muted loop id="leftSideVideo" class="side left">
                 <source src="./videos/VAPO.mp4" type="video/mp4">
             </video>
-            <div id="smokeFilter" class="smoke-filter">
-                <img id="resoGif" class="resoGif" src="./gifs/SMOKE.gif">
-            </div>
+            <div id="patternVapo" class="patternVapo"></div>
             <div id="likesVapo" class="likesVapo">
                 <label class="containerLikeVapo">
                     <input type="checkbox" onclick="likeVapo()">
@@ -48,6 +46,7 @@
             <video autoplay muted loop id="rightSideVideo" class="side right"> 
                 <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
             </video>
+            <div id="patternEnElHall" class="patternEnElHall"></div>
             <div id="likesEnElHall" class="likesEnElHall">
                 <label class="containerLikeEnElHall">
                     <input type="checkbox" onclick="likeEnElHall()">
