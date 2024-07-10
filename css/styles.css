@@ -264,9 +264,16 @@ body {
   .container {
     flex-direction: column;
     height: auto;
+    align-items: center;
   }
 
   .videoPantallaCompletaVapo, .videoPantallaCompletaEnElHall{
+    width: 90vw;
+    display: flex;
+    align-items: center;
+  }
+
+  .logoCarga {
     width: 100vw;
   }
 
@@ -281,16 +288,18 @@ body {
   }
 
   .left, .right {
-    width: 100vw;
+    width: 90vw;
   }
 
 
   .likesEnElHall {
     bottom: .5rem;
+    right: 3rem;
   }
 
   .likesVapo {
     top: .5rem;
+    left: 3rem;
   }
 
   .rotarIzq {

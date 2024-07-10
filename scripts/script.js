@@ -10,6 +10,9 @@ const likesEnElHall = document.getElementById('likesEnElHall');
 const patternVapo = document.getElementById('patternVapo');
 const patternEnElHall = document.getElementById('patternEnElHall');
 
+const videoPantallaCompletaVapo = document.getElementById('videoPantallaCompletaVapo');
+const videoPantallaCompletaEnElHall = document.getElementById('videoPantallaCompletaEnElHall');
+
 const getMobileOS = () => {
     const ua = navigator.userAgent
     if (/android/i.test(ua)) {
@@ -46,14 +49,14 @@ const svgs = `  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" heig
                     <polygon points="50,50 40,40"></polygon>
                 </svg>`;
 
-const videoVapo = ` <video autoplay load volume="0.3" id="leftSideVideo" class="side left"> 
+const videoVapo = ` <video id="leftSideVideo" class="side left"> 
                         <source src="./videos/VAPO.mp4" type="video/mp4">
                     </video>`;
 const pLikesV = `   <label id="labelSvg" class="containerLikeVapo">
                         <input type="checkbox" onclick="likeVapo()">
                     </label>`;
 
-const videoEnElHall = ` <video autoplay load volume="0.3" id="rightSideVideo" class="side right"> 
+const videoEnElHall = ` <video id="rightSideVideo" class="side right"> 
                             <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
                         </video>`;
 const pLikesE = `   <label id="labelSvg" class="containerLikeEnElHall">
@@ -74,21 +77,21 @@ function accionIzquierda() {
         container.classList.remove('botonesMedio');
         document.getElementById('videoPatternV').innerHTML = '';
         document.getElementById('videoPatternE').innerHTML = '';
-        document.getElementById('videoPantallaCompletaVapo').innerHTML = pLogo1;
+        videoPantallaCompletaVapo.innerHTML = pLogo1;
         setTimeout(() => {
             if (document.getElementById('logoCarga1')){
                 document.getElementById('logoCarga1').classList.add('animate__animated','animate__fadeOut');
                 setTimeout(() => {
-                    document.getElementById('videoPantallaCompletaVapo').innerHTML = videoVapo;
+                    videoPantallaCompletaVapo.innerHTML = videoVapo;
+                    document.getElementById('leftSideVideo').volume = 0.3;
+                    document.getElementById('leftSideVideo').play();
                     document.getElementById('likesVapo').innerHTML = pLikesV;
                     document.getElementById('labelSvg').innerHTML += svgs;
                 }, 1000);
             }
         }, 3300);
-        if (document.getElementById('videoPantallaCompletaVapo')) {
-            document.getElementById('videoPantallaCompletaVapo').addEventListener("ended", (event) => {
-                accionIzquierda();
-            });
+        if (document.getElementById('leftSideVideo')) {
+            document.getElementById('leftSideVideo').addEventListener('ended',accionIzquierda,false);
         }
         setTimeout(() => {
             document.getElementById('botonesSlide').style.right = '-100%';
@@ -102,10 +105,10 @@ function accionIzquierda() {
         container.classList.add('botonesMedio');
         container.classList.remove('botonesIzquierda','botonesDerecha');
         if (document.getElementById('logoCarga1')){
-            document.getElementById('videoPantallaCompletaVapo').removeChild(document.getElementById('logoCarga1'));
+            videoPantallaCompletaVapo.removeChild(document.getElementById('logoCarga1'));
         }
         if (document.getElementById('leftSideVideo')){
-            document.getElementById('videoPantallaCompletaVapo').removeChild(document.getElementById('leftSideVideo'));
+            videoPantallaCompletaVapo.removeChild(document.getElementById('leftSideVideo'));
         }
         document.getElementById('leftSide').innerHTML = pLeftSideVideo;
         document.getElementById('rightSide').innerHTML = pRightSideVideo;
@@ -133,22 +136,24 @@ function accionDerecha() {
         container.classList.remove('botonesMedio');
         document.getElementById('videoPatternV').innerHTML = '';
         document.getElementById('videoPatternE').innerHTML = '';
-        document.getElementById('videoPantallaCompletaEnElHall').innerHTML = pLogo2;
+        videoPantallaCompletaEnElHall.innerHTML = pLogo2;
         setTimeout(() => {
             if (document.getElementById('logoCarga2')){
                 document.getElementById('logoCarga2').classList.add('animate__animated','animate__fadeOut');
                 setTimeout(() => {
-                    document.getElementById('videoPantallaCompletaEnElHall').innerHTML = videoEnElHall;
+                    videoPantallaCompletaEnElHall.innerHTML = videoEnElHall;
+                    document.getElementById('rightSideVideo').volume = 0.3;
+                    document.getElementById('rightSideVideo').play();
                     document.getElementById('likesEnElHall').innerHTML = pLikesE;
                     document.getElementById('labelSvg').innerHTML += svgs;
                 }, 1000);
             }
         }, 3300);
-        if (document.getElementById('videoPantallaCompletaEnElHall')) {
-            document.getElementById('videoPantallaCompletaEnElHall').addEventListener("ended", (event) => {
-                accionDerecha();
-            });
+
+        if (document.getElementById('rightSideVideo')) {
+            document.getElementById('rightSideVideo').addEventListener('ended',accionDerecha,false);
         }
+
         setTimeout(() => {
             document.getElementById('botonesSlide').style.left = '-100%';
             if(window.innerWidth < 1024){
@@ -162,10 +167,10 @@ function accionDerecha() {
         container.classList.add('botonesMedio');
         container.classList.remove('botonesIzquierda','botonesDerecha');
         if (document.getElementById('logoCarga2')){
-            document.getElementById('videoPantallaCompletaEnElHall').removeChild(document.getElementById('logoCarga2'));
+            videoPantallaCompletaEnElHall.removeChild(document.getElementById('logoCarga2'));
         }
         if (document.getElementById('rightSideVideo')){
-            document.getElementById('videoPantallaCompletaEnElHall').removeChild(document.getElementById('rightSideVideo'));
+            videoPantallaCompletaEnElHall.removeChild(document.getElementById('rightSideVideo'));
         }
         document.getElementById('leftSide').innerHTML = pLeftSideVideo;
         document.getElementById('rightSide').innerHTML = pRightSideVideo;
