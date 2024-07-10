@@ -10,61 +10,14 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <div id="container" class="container">
-        <div id="leftSide" class="side left">
-            <video autoplay muted loop id="leftSideVideo" class="side left">
-                <source src="./videos/VAPO.mp4" type="video/mp4">
-            </video>
-            <div id="patternVapo" class="patternVapo"></div>
-            <div id="likesVapo" class="likesVapo">
-                <label class="containerLikeVapo">
-                    <input type="checkbox" onclick="likeVapo()">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="50px" width="50px" class="like">
-                      <path d="M8 10V20M8 10L4 9.99998V20L8 20M8 10L13.1956 3.93847C13.6886 3.3633 14.4642 3.11604 15.1992 3.29977L15.2467 3.31166C16.5885 3.64711 17.1929 5.21057 16.4258 6.36135L14 9.99998H18.5604C19.8225 9.99998 20.7691 11.1546 20.5216 12.3922L19.3216 18.3922C19.1346 19.3271 18.3138 20 17.3604 20L8 20"></path>
-                    </svg>
-                    <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" class="celebrate">
-                        <polygon points="0,0 10,10"></polygon>
-                        <polygon points="0,25 10,25"></polygon>
-                        <polygon points="0,50 10,40"></polygon>
-                        <polygon points="50,0 40,10"></polygon>
-                        <polygon points="50,25 40,25"></polygon>
-                        <polygon points="50,50 40,40"></polygon>
-                    </svg>
-                </label>
-            </div>
-        </div>
-        <div id="botonesSlide" class="boton-circular animate__animated animate__heartBeat animate__delay-2s"> 
-            <img class="imgLogo" src="./logos/logo.jpg">
-            <button id="botonIzq" class="mitad izquierda" onclick="accionIzquierda()">
-                <img id="anillo1" class="imgAnillo1" src="./logos/PNG-OBJ-SEPARADOS/PNG-ANILLO1.png">
-            </button>
-            <button id="botonDer" class="mitad derecha" onclick="accionDerecha()">
-                <img id="anillo2" class="imgAnillo2" src="./logos/PNG-OBJ-SEPARADOS/PNG-ANILLO2.png">
-            </button>
-        </div>
-        <div id="rightSide" class="side right">
-            <video autoplay muted loop id="rightSideVideo" class="side right"> 
-                <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
-            </video>
-            <div id="patternEnElHall" class="patternEnElHall"></div>
-            <div id="likesEnElHall" class="likesEnElHall">
-                <label class="containerLikeEnElHall">
-                    <input type="checkbox" onclick="likeEnElHall()">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="50px" width="50px" class="like">
-                      <path d="M8 10V20M8 10L4 9.99998V20L8 20M8 10L13.1956 3.93847C13.6886 3.3633 14.4642 3.11604 15.1992 3.29977L15.2467 3.31166C16.5885 3.64711 17.1929 5.21057 16.4258 6.36135L14 9.99998H18.5604C19.8225 9.99998 20.7691 11.1546 20.5216 12.3922L19.3216 18.3922C19.1346 19.3271 18.3138 20 17.3604 20L8 20"></path>
-                    </svg>
-                    <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" class="celebrate">
-                        <polygon points="0,0 10,10"></polygon>
-                        <polygon points="0,25 10,25"></polygon>
-                        <polygon points="0,50 10,40"></polygon>
-                        <polygon points="50,0 40,10"></polygon>
-                        <polygon points="50,25 40,25"></polygon>
-                        <polygon points="50,50 40,40"></polygon>
-                    </svg>
-                </label>
-            </div>
-        </div>
+    <div id="container" class="container botonesMedio">
+        <div id="leftSide" class="side left"></div>
+        <div id="videoPantallaCompletaVapo" class="videoPantallaCompletaVapo"></div>
+        <div id="botonesSlide" class="boton-circular"></div>
+        <div id="videoPantallaCompletaEnElHall" class="videoPantallaCompletaEnElHall"></div>
+        <div id="rightSide" class="side right"></div>
     </div>
-    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/scriptDOM.js" defer></script>
 </body>
 </html>

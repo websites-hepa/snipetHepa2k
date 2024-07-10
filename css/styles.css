@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
 body {
@@ -20,6 +21,10 @@ body {
     width: 100vw;
     height: 100vh;
     position: relative;
+}
+
+.videoPattern {
+  position: relative;
 }
 
 .boton-circular {
@@ -47,11 +52,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .left, .right {
-  width: 10vw;
+  width: 100%;
 }
 
 .mitad {
@@ -92,17 +96,16 @@ body {
 
 /* Botones Like */
 .likesVapo, .likesEnElHall {
-    display: none;
-    position: absolute;
+  position: absolute;
+  z-index: 1;
 }
 
 .likesVapo {
-    left: 1%;
+  left: 1rem;
 }
 
 .likesEnElHall {
-    right: 1%;
-   transform: scaleX(-1);
+  right: 1rem;
 }
 
 .containerLikeVapo input, .containerLikeEnElHall input {
@@ -177,6 +180,7 @@ body {
 .patternVapo {
   /* Basic dimensions and centering */
   position: absolute;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: flex;
@@ -214,6 +218,7 @@ body {
 .patternEnElHall {
   /* Basic dimensions and centering */
   position: absolute;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: flex;
@@ -237,6 +242,7 @@ body {
 
   /* Animation */
   animation: move 4s linear infinite;
+  animation-delay: 10ms;
 }
 
 @keyframes move {
@@ -248,11 +254,20 @@ body {
   }
 }
 
+.logoCarga {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .container {
-      flex-direction: column;
-      height: auto;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .videoPantallaCompletaVapo, .videoPantallaCompletaEnElHall{
+    width: 100vw;
   }
 
   .boton-circular {
@@ -266,10 +281,173 @@ body {
   }
 
   .left, .right {
-    width: 100%;
+    width: 100vw;
   }
 
-  .patternVapo, .patternEnElHall{
-    height: 100%;
+
+  .likesEnElHall {
+    bottom: .5rem;
+  }
+
+  .likesVapo {
+    top: .5rem;
+  }
+
+  .rotarIzq {
+    animation: rotarIzq 0.8s linear forwards;
+  }
+  
+  @keyframes rotarIzq {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .rotarInvIzq {
+    animation: rotarInvIzq 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvIzq {
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .rotarImg1Izq {
+    animation: rotarImg1Izq 0.8s linear forwards;
+  }
+  
+  @keyframes rotarImg1Izq {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+
+  .rotarInvImg1Izq {
+    animation: rotarInvImg1Izq 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvImg1Izq {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .rotarImg2Izq {
+    animation: rotarImg2Izq 0.8s linear forwards;
+  }
+  
+  @keyframes rotarImg2Izq {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+
+  .rotarInvImg2Izq {
+    animation: rotarInvImg2Izq 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvImg2Izq {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+
+  .rotarDer {
+    animation: rotarDer 0.8s linear forwards;
+  }
+  
+  @keyframes rotarDer {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .rotarInvDer {
+    animation: rotarInvDer 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvDer {
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .rotarImg1Der {
+    animation: rotarImg1Der 0.8s linear forwards;
+  }
+  
+  @keyframes rotarImg1Der {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+
+  .rotarInvImg1Der {
+    animation: rotarInvImg1Der 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvImg1Der {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .rotarImg2Der {
+    animation: rotarImg2Der 0.8s linear forwards;
+  }
+  
+  @keyframes rotarImg2Der {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+
+  .rotarInvImg2Der {
+    animation: rotarInvImg2Der 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvImg2Der {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
   }
 }
+
