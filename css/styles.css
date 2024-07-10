@@ -289,17 +289,18 @@ body {
 
   .left, .right {
     width: 90vw;
+    height: 90vh;
   }
 
 
   .likesEnElHall {
     bottom: .5rem;
-    right: 3rem;
+    right: 2rem;
   }
 
   .likesVapo {
     top: .5rem;
-    left: 3rem;
+    left: 2rem;
   }
 
   .rotarIzq {
