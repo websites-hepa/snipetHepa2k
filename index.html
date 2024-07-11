@@ -13,12 +13,17 @@
     <div id="container" class="container botonesMedio">
         <div id="leftSide" class="side left"></div>
         <div id="videoPantallaCompletaVapo" class="videoPantallaCompletaVapo"></div>
-        <div id="botonesSlide" class="boton-circular"></div>
+        <div id="botonesSlide" class="boton-circular animate__animated animate__heartBeat">
+            <button id="botonIzq" class="mitad izquierda" onclick="accionIzquierda()">
+                <img id="anillo1" class="imgAnillo1" src="./imagenes/vape.png">
+            </button>
+            <button id="botonDer" class="mitad derecha" onclick="accionDerecha()">
+                <img id="anillo2" class="imgAnillo2" src="./imagenes/bill.png">
+            </button>
+        </div>
         <div id="videoPantallaCompletaEnElHall" class="videoPantallaCompletaEnElHall"></div>
         <div id="rightSide" class="side right"></div>
     </div>
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="./scripts/jquery-3.7.1.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/scriptDOM.js" defer></script>
 </body>

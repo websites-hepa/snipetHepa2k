@@ -8,12 +8,10 @@
 body {
   height: 100vh;
   display: flex;
-  justify-content: center;
-  overflow: hidden;
-  align-items: center;
   background: rgb(0,0,0);
   background: radial-gradient(circle, rgba(0,0,0,1) 60%, rgb(29, 29, 29) 92%, rgb(48, 48, 48) 100%);
   flex-direction: column;
+  justify-content: center;
 }
 
 .container {
@@ -21,6 +19,8 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
+  margin: 1rem;
+  align-items: center;
 }
 
 .videoPattern {
@@ -42,6 +42,11 @@ body {
   transition: left 0.8s, right 0.8s;
 }
 
+.videoPantallaCompletaVapo, .videoPantallaCompletaEnElHall {
+  display: flex;
+  align-items: center;
+}
+
 .imgLogo {
   width: 100%;
   height: 100%;
@@ -50,27 +55,43 @@ body {
 .side {
   width: 100%;
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .mitad {
-  width: 51%;
+  width: 50%;
   height: 100%;
   position: absolute;
   top: 0;
   cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.mitad:hover {
+  background-color: rgb(138, 138, 138);
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.mitad:active {
+  background-color: rgb(71, 71, 71);
 }
 
 .izquierda {
+  color: white;
+  text-align: center;
   border: none;
   left: 0;
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
+
 }
 
 .derecha {
+  color: white;
+  text-align: center;
   border: none;
   right: 0;
   border-top-right-radius: 50%;
@@ -78,11 +99,12 @@ body {
 }
 
 .imgAnillo1 {
-  width: 100%;
+  width: 40%;
 }
 
 .imgAnillo2 {
-  width: 100%;
+  width: 80%;
+  rotate: 90deg;
 }
 
 .resoGif {
@@ -95,14 +117,29 @@ body {
 .likesVapo, .likesEnElHall {
   position: absolute;
   z-index: 1;
-}
-
-.likesVapo {
-  left: 1rem;
+  display: none;
 }
 
 .likesEnElHall {
-  right: 1rem;
+  transform: scaleX(-1);
+}
+
+.videoPattern {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.patternVapo {
+  height: 400%;
+  display: flex;
+  position: absolute;
+}
+
+.humoVapo {
+  opacity: 0.9;
 }
 
 .containerLikeVapo input, .containerLikeEnElHall input {
@@ -185,7 +222,7 @@ body {
 
 .logoCarga {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -194,15 +231,15 @@ body {
     flex-direction: column;
     height: auto;
     align-items: center;
+    width: auto;
   }
 
   .videoPantallaCompletaVapo, .videoPantallaCompletaEnElHall{
-    width: 90vw;
-    display: flex;
-    align-items: center;
+    width: 90%;
   }
 
   .logoCarga {
+    align-items: center;
     width: 100vw;
   }
 
@@ -212,24 +249,16 @@ body {
       rotate: 90deg;
   }
 
+  .side {
+    display: block;
+  }
+
   .imgAnillo1, .imgAnillo2, .imgLogo {
       rotate: -90deg;
   }
 
   .left, .right {
-    width: 90vw;
-    height: 80vh;
-  }
-
-
-  .likesEnElHall {
-    bottom: .5rem;
-    right: 2rem;
-  }
-
-  .likesVapo {
-    top: .5rem;
-    left: 2rem;
+    height: 40vw;
   }
 
   .rotarIzq {

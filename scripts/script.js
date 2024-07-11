@@ -38,21 +38,29 @@ const svgs = `  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" heig
                     <polygon points="50,50 40,40"></polygon>
                 </svg>`;
 
-const videoVapo = `<div id="leftSideVideo" class="side left"></div>`;
+const videoVapo = ` <video autoplay muted playsinline load volume="0.3" id="leftSideVideo" class="side left"> 
+                        <source src="./videos/VAPO.mp4" type="video/mp4">
+                    </video>`;
 
-const videoEnElHall =  `<div id="rightSideVideo" class="side right"></div>`;
+const videoEnElHall = ` <video autoplay muted playsinline load volume="0.3" id="rightSideVideo" class="side right"> 
+                            <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
+                        </video>`;
 
-const pLikesV = `   <label id="labelSvg" class="containerLikeVapo">
-                        <input type="checkbox" onclick="likeVapo()">
-                    </label>`;
-const pLikesE = `   <label id="labelSvg" class="containerLikeEnElHall">
-                        <input type="checkbox" onclick="likeEnElHall()">
-                    </label>`;
+const pLikesV = `   <div id="likesVapo" class="likesVapo">
+                        <label id="labelSvgV" class="containerLikeVapo">
+                            <input type="checkbox" onclick="likeVapo()">
+                        </label>
+                    </div>`;
+const pLikesE = `   <div id="likesEnElHall" class="likesEnElHall">
+                        <label id="labelSvgE" class="containerLikeEnElHall">
+                            <input type="checkbox" onclick="likeEnElHall()">
+                        </label>
+                    </div>`;
 const pLogo1 = `<video autoplay muted id="logoCarga1" class="logoCarga right"> 
-                    <source src="./logos/logo.mp4" type="video/mp4">
+                    <source src="./logos/introhepa.mp4" type="video/mp4">
                 </video>`;
 const pLogo2 = `<video autoplay muted id="logoCarga2" class="logoCarga right"> 
-                    <source src="./logos/logo.mp4" type="video/mp4">
+                    <source src="./logos/introhepa.mp4" type="video/mp4">
                 </video>`;
 
 function accionIzquierda() {
@@ -62,13 +70,20 @@ function accionIzquierda() {
         document.getElementById('videoPatternV').innerHTML = '';
         document.getElementById('videoPatternE').innerHTML = '';
         videoPantallaCompletaVapo.innerHTML = pLogo1;
+        container.style.margin = '0';
         setTimeout(() => {
             if (document.getElementById('logoCarga1')){
                 document.getElementById('logoCarga1').classList.add('animate__animated','animate__fadeOut');
                 setTimeout(() => {
                     videoPantallaCompletaVapo.innerHTML = videoVapo;
-                    document.getElementById('likesVapo').innerHTML = pLikesV;
-                    document.getElementById('labelSvg').innerHTML += svgs;
+                    document.getElementById('leftSideVideo').volume = 0.3;
+                    document.getElementById('leftSideVideo').muted = false;
+                    videoPantallaCompletaVapo.innerHTML += pLikesV;
+                    document.getElementById('labelSvgV').innerHTML += svgs;
+                    document.getElementById('likesVapo').style.display = 'block';
+                    document.getElementById('likesVapo').style.left = '1rem';
+                    document.getElementById('videoPantallaCompletaVapo').style.margin = "1rem";
+                    document.getElementById('videoPantallaCompletaVapo').style.padding = "1rem";
                 }, 1000);
             }
         }, 3300);
@@ -83,6 +98,9 @@ function accionIzquierda() {
     } else if (container.classList.contains('botonesIzquierda')){
         container.classList.add('botonesMedio');
         container.classList.remove('botonesIzquierda','botonesDerecha');
+        if (document.getElementById('likesVapo')){
+            document.getElementById('likesVapo').style.display = 'none';
+        }
         if (document.getElementById('logoCarga1')){
             videoPantallaCompletaVapo.removeChild(document.getElementById('logoCarga1'));
         }
@@ -92,7 +110,13 @@ function accionIzquierda() {
         document.getElementById('leftSide').innerHTML = pLeftSideVideo;
         document.getElementById('rightSide').innerHTML = pRightSideVideo;
         setTimeout(() => {
+            container.style.margin = '1rem';
             document.getElementById('botonesSlide').style.right = '0';
+            container.style.alignItems = 'center';
+            videoPantallaCompletaVapo.style.margin = '0';
+            videoPantallaCompletaVapo.style.padding = '0';
+            videoPantallaCompletaEnElHall.style.margin = '0';
+            videoPantallaCompletaEnElHall.style.padding = '0';
             if(window.innerWidth < 1024){
                 document.getElementById('botonesSlide').classList.add('rotarInvIzq');
                 document.getElementById('anillo1').classList.add('rotarInvImg1Izq');
@@ -103,8 +127,6 @@ function accionIzquierda() {
                     document.getElementById('anillo2').classList.remove('rotarImg2Izq','rotarInvImg2Izq')
                 }, 1000);
             }
-            document.getElementById('patternVapo').classList.add('patternVapo');
-            document.getElementById('patternEnElHall').classList.add('patternEnElHall');
         }, 100);
     }
 }
@@ -116,20 +138,23 @@ function accionDerecha() {
         document.getElementById('videoPatternV').innerHTML = '';
         document.getElementById('videoPatternE').innerHTML = '';
         videoPantallaCompletaEnElHall.innerHTML = pLogo2;
+        container.style.margin = '0';
         setTimeout(() => {
             if (document.getElementById('logoCarga2')){
                 document.getElementById('logoCarga2').classList.add('animate__animated','animate__fadeOut');
                 setTimeout(() => {
                     videoPantallaCompletaEnElHall.innerHTML = videoEnElHall;
-                    document.getElementById('likesEnElHall').innerHTML = pLikesE;
-                    document.getElementById('labelSvg').innerHTML += svgs;
+                    document.getElementById('rightSideVideo').volume = 0.3;
+                    document.getElementById('rightSideVideo').muted = false;
+                    videoPantallaCompletaEnElHall.innerHTML += pLikesE;
+                    document.getElementById('labelSvgE').innerHTML += svgs;
+                    document.getElementById('likesEnElHall').style.display = 'block';
+                    document.getElementById('likesEnElHall').style.right = '1rem';
+                    document.getElementById('videoPantallaCompletaEnElHall').style.margin = "1rem";
+                    document.getElementById('videoPantallaCompletaEnElHall').style.padding = "1rem";
                 }, 1000);
             }
         }, 3300);
-
-        if (document.getElementById('rightSideVideo')) {
-            document.getElementById('rightSideVideo').addEventListener('ended',accionDerecha,false);
-        }
 
         setTimeout(() => {
             document.getElementById('botonesSlide').style.left = '-100%';
@@ -143,6 +168,9 @@ function accionDerecha() {
     } else if (container.classList.contains('botonesDerecha')){
         container.classList.add('botonesMedio');
         container.classList.remove('botonesIzquierda','botonesDerecha');
+        if (document.getElementById('likesEnElHall')){
+            document.getElementById('likesEnElHall').style.display = 'none';
+        }
         if (document.getElementById('logoCarga2')){
             videoPantallaCompletaEnElHall.removeChild(document.getElementById('logoCarga2'));
         }
@@ -152,7 +180,13 @@ function accionDerecha() {
         document.getElementById('leftSide').innerHTML = pLeftSideVideo;
         document.getElementById('rightSide').innerHTML = pRightSideVideo;
         setTimeout(() => {
+            container.style.margin = '1rem';
             document.getElementById('botonesSlide').style.left = '0';
+            container.style.alignItems = 'center';
+            videoPantallaCompletaVapo.style.margin = '0';
+            videoPantallaCompletaVapo.style.padding = '0';
+            videoPantallaCompletaEnElHall.style.margin = '0';
+            videoPantallaCompletaEnElHall.style.padding = '0';
             if(window.innerWidth < 1024){
                 document.getElementById('botonesSlide').classList.add('rotarInvDer');
                 document.getElementById('anillo1').classList.add('rotarInvImg1Der');
@@ -163,11 +197,21 @@ function accionDerecha() {
                     document.getElementById('anillo2').classList.remove('rotarImg2Der','rotarInvImg2Der')
                 }, 1000);
             }
-            document.getElementById('patternVapo').classList.add('patternVapo');
-            document.getElementById('patternEnElHall').classList.add('patternEnElHall');
         }, 100);
     }
 }
+
+document.getElementById('botonIzq').addEventListener('click', () => {
+    setTimeout(() => {
+        document.getElementById('leftSideVideo').muted = false;
+        document.getElementById('leftSideVideo').addEventListener('ended', () => {
+            document.getElementById('leftSideVideo').play();
+        });
+    }, 4500);
+});
+
+
+
 
 function likeVapo() {
     if(banderaV == false) {
@@ -229,41 +273,13 @@ function conexionAPI() {
         });
 }
 
-// Función para inicializar los reproductores de YouTube
-function onYouTubeIframeAPIReady() {
-    playerVapo = new YT.Player('leftSideVideo', {
-        height: '100%',
-        width: '100%',
-        videoId: 'fWpHZHmx-tw',
-        playerVars: {
-            'autoplay': 1,
-            'mute': 0
-        },
-        events: {
-            'onReady': onPlayerReady
-        }
-    });
-    playerEnElHall = new YT.Player('rightSideVideo', {
-        height: '100%',
-        width: '100%',
-        videoId: 'OUhyWtcVZIA',
-        playerVars: {
-            'autoplay': 1,
-            'mute': 0
-        },
-        events: {
-            'onReady': onPlayerReady
-        }
-    });
+function pulsacionBoton() {
+    setTimeout(() => {
+        document.getElementById('botonesSlide').classList.remove('animate__animated','animate__heartBeat');
+    }, 2000);
+    setTimeout(() => {
+        document.getElementById('botonesSlide').classList.add('animate__animated','animate__heartBeat');
+    }, 200);
 }
 
-function onPlayerReady(event) {
-    event.target.setVolume(30);
-}
-
-// Función para ajustar el volumen de los reproductores
-function setVolume(player, volume) {
-    if (player && player.setVolume) {
-        player.setVolume(volume);
-    }
-}
+setInterval(pulsacionBoton(),1000);
