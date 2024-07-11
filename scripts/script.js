@@ -56,10 +56,10 @@ const pLikesE = `   <div id="likesEnElHall" class="likesEnElHall">
                             <input type="checkbox" onclick="likeEnElHall()">
                         </label>
                     </div>`;
-const pLogo1 = `<video autoplay muted id="logoCarga1" class="logoCarga right"> 
+const pLogo1 = `<video autoplay muted playsinline id="logoCarga1" class="logoCarga right"> 
                     <source src="./logos/introhepa.mp4" type="video/mp4">
                 </video>`;
-const pLogo2 = `<video autoplay muted id="logoCarga2" class="logoCarga right"> 
+const pLogo2 = `<video autoplay muted playsinline id="logoCarga2" class="logoCarga right"> 
                     <source src="./logos/introhepa.mp4" type="video/mp4">
                 </video>`;
 
@@ -76,7 +76,6 @@ function accionIzquierda() {
                 document.getElementById('logoCarga1').classList.add('animate__animated','animate__fadeOut');
                 setTimeout(() => {
                     videoPantallaCompletaVapo.innerHTML = videoVapo;
-                    document.getElementById('leftSideVideo').volume = 0.3;
                     document.getElementById('leftSideVideo').muted = false;
                     videoPantallaCompletaVapo.innerHTML += pLikesV;
                     document.getElementById('labelSvgV').innerHTML += svgs;
@@ -144,8 +143,6 @@ function accionDerecha() {
                 document.getElementById('logoCarga2').classList.add('animate__animated','animate__fadeOut');
                 setTimeout(() => {
                     videoPantallaCompletaEnElHall.innerHTML = videoEnElHall;
-                    document.getElementById('rightSideVideo').volume = 0.3;
-                    document.getElementById('rightSideVideo').muted = false;
                     videoPantallaCompletaEnElHall.innerHTML += pLikesE;
                     document.getElementById('labelSvgE').innerHTML += svgs;
                     document.getElementById('likesEnElHall').style.display = 'block';
@@ -203,11 +200,28 @@ function accionDerecha() {
 
 document.getElementById('botonIzq').addEventListener('click', () => {
     setTimeout(() => {
+        document.getElementById('logoCarga1').muted = false;
+    }, 100);
+    setTimeout(() => {
         document.getElementById('leftSideVideo').muted = false;
+        document.getElementById('leftSideVideo').volume = 0.3;
         document.getElementById('leftSideVideo').addEventListener('ended', () => {
             document.getElementById('leftSideVideo').play();
         });
-    }, 4500);
+    }, 4400);
+});
+
+document.getElementById('botonDer').addEventListener('click', () => {
+    setTimeout(() => {
+        document.getElementById('logoCarga2').muted = false;
+    }, 100);
+    setTimeout(() => {
+        document.getElementById('rightSideVideo').muted = false;
+        document.getElementById('rightSideVideo').volume = 0.3;
+        document.getElementById('rightSideVideo').addEventListener('ended', () => {
+            document.getElementById('rightSideVideo').play();
+        });
+    }, 4400);
 });
 
 

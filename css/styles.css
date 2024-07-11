@@ -124,22 +124,12 @@ body {
   transform: scaleX(-1);
 }
 
-.videoPattern {
-  display: flex;
-  overflow: hidden;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.patternVapo {
-  height: 400%;
-  display: flex;
-  position: absolute;
-}
-
 .humoVapo {
   opacity: 0.9;
+}
+
+.billetesEnElHall {
+  width: 99%;
 }
 
 .containerLikeVapo input, .containerLikeEnElHall input {

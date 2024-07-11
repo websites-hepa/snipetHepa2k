@@ -4,14 +4,11 @@ const botonCircular = document.getElementById('botonesSlide');
 const rightSide = document.getElementById('rightSide');
 
 const pLeftSideVideo = `    <div id="videoPatternV" class="videoPattern">
-                                <img id="rightSideVideo" class="side left" src="./gifs/humo.gif" class="humoVapo">
+                                <img id="rightSideVideo" class="side left humoVapo" src="./gifs/humo.gif">
                             </div>`;
 
 const pRightSideVideo = `   <div id="videoPatternE" class="videoPattern">
-                                <div id="patternEnElHall"></div>
-                                <video autoplay muted loop id="rightSideVideo" class="side right"> 
-                                    <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
-                                </video>
+                                <img id="rightSideVideo" class="side right billetesEnElHall" src="./gifs/billetes.gif">
                             </div>`;
 
 function innerDOM() {
