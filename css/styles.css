@@ -24,7 +24,6 @@ body {
 
 .videoPattern {
   position: relative;
-  height: 40vh;
 }
 
 .boton-circular {
@@ -249,10 +248,6 @@ body {
 
   .billetesEnElHall {
     width: 100%;
-  }
-
-  .videoPattern {
-    height: auto;
   }
 
   .rotarIzq {
