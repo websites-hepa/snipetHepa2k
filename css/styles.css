@@ -125,6 +125,7 @@ body {
 
 .humoVapo {
   opacity: 0.9;
+  width: 101%;
 }
 
 .containerLikeVapo input, .containerLikeEnElHall input {
