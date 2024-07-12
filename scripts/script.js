@@ -38,11 +38,11 @@ const svgs = `  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" heig
                     <polygon points="50,50 40,40"></polygon>
                 </svg>`;
 
-const videoVapo = ` <video autoplay muted playsinline load volume="0.3" id="leftSideVideo" class="side left"> 
+const videoVapo = ` <video autoplay muted playsinline id="leftSideVideo" class="side left"> 
                         <source src="./videos/VAPO.mp4" type="video/mp4">
                     </video>`;
 
-const videoEnElHall = ` <video autoplay muted playsinline load volume="0.3" id="rightSideVideo" class="side right"> 
+const videoEnElHall = ` <video autoplay muted playsinline id="rightSideVideo" class="side right"> 
                             <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
                         </video>`;
 
