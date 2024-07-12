@@ -56,6 +56,10 @@ body {
   flex: 1;
 }
 
+.videoleft, .videoright {
+  width: 85vw;
+}
+
 .mitad {
   width: 50%;
   height: 100%;
@@ -110,6 +114,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.like{
+  width: 5rem;
+  height: 5rem;
 }
 
 /* Botones Like */
@@ -208,7 +217,6 @@ body {
 
 .logoCarga {
   width: 100vw;
-  height: 90vh;
   overflow: hidden;
 }
 
@@ -225,7 +233,6 @@ body {
   }
 
   .logoCarga {
-    align-items: center;
     width: 100vw;
   }
 
@@ -249,6 +256,12 @@ body {
 
   .billetesEnElHall {
     width: 100%;
+  }
+
+  
+  .like{
+    width: 3rem;
+    height: 3rem;
   }
 
   .rotarIzq {
