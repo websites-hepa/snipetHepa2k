@@ -251,6 +251,10 @@ body {
     height: 40vw;
   }
 
+  .billetesEnElHall {
+    width: 100%;
+  }
+
   .rotarIzq {
     animation: rotarIzq 0.8s linear forwards;
   }
