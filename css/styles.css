@@ -16,7 +16,6 @@ body {
 
 .container {
   display: flex;
-  width: 100vw;
   height: 100vh;
   position: relative;
   margin: 1rem;
@@ -25,6 +24,7 @@ body {
 
 .videoPattern {
   position: relative;
+  height: 40vh;
 }
 
 .boton-circular {
@@ -126,10 +126,6 @@ body {
 
 .humoVapo {
   opacity: 0.9;
-}
-
-.billetesEnElHall {
-  width: 99%;
 }
 
 .containerLikeVapo input, .containerLikeEnElHall input {
@@ -253,6 +249,10 @@ body {
 
   .billetesEnElHall {
     width: 100%;
+  }
+
+  .videoPattern {
+    height: auto;
   }
 
   .rotarIzq {

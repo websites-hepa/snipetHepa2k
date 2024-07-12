@@ -1,6 +1,5 @@
 const container = document.getElementById('container');
 const leftSide = document.getElementById('leftSide');
-const botonCircular = document.getElementById('botonesSlide');
 const rightSide = document.getElementById('rightSide');
 
 const pLeftSideVideo = `    <div id="videoPatternV" class="videoPattern">

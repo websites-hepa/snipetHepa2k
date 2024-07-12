@@ -203,11 +203,13 @@ document.getElementById('botonIzq').addEventListener('click', () => {
         document.getElementById('logoCarga1').muted = false;
     }, 100);
     setTimeout(() => {
-        document.getElementById('leftSideVideo').muted = false;
-        document.getElementById('leftSideVideo').volume = 0.3;
-        document.getElementById('leftSideVideo').addEventListener('ended', () => {
-            document.getElementById('leftSideVideo').play();
-        });
+        if(document.getElementById('leftSideVideo')){
+            document.getElementById('leftSideVideo').muted = false;
+            document.getElementById('leftSideVideo').volume = 0.3;
+            document.getElementById('leftSideVideo').addEventListener('ended', () => {
+                document.getElementById('leftSideVideo').play();
+            });
+        }
     }, 4400);
 });
 
