@@ -7,7 +7,7 @@ const pLeftSideVideo = `    <div id="videoPatternV" class="videoPattern">
                             </div>`;
 
 const pRightSideVideo = `   <div id="videoPatternE" class="videoPattern">
-                                <img id="rightSideVideo" class="side right billetesEnElHall" height="451.5px" src="./gifs/billetes.gif">
+                                <img id="rightSideVideo" class="side right billetesEnElHall" src="./gifs/billetes.gif">
                             </div>`;
 
 function innerDOM() {
