@@ -76,7 +76,6 @@ function accionIzquierda() {
                 document.getElementById('logoCarga1').classList.add('animate__animated','animate__fadeOut');
                 setTimeout(() => {
                     videoPantallaCompletaVapo.innerHTML = videoVapo;
-                    document.getElementById('leftSideVideo').muted = false;
                     videoPantallaCompletaVapo.innerHTML += pLikesV;
                     document.getElementById('labelSvgV').innerHTML += svgs;
                     document.getElementById('likesVapo').style.display = 'block';
@@ -218,11 +217,13 @@ document.getElementById('botonDer').addEventListener('click', () => {
         document.getElementById('logoCarga2').muted = false;
     }, 100);
     setTimeout(() => {
-        document.getElementById('rightSideVideo').muted = false;
-        document.getElementById('rightSideVideo').volume = 0.3;
-        document.getElementById('rightSideVideo').addEventListener('ended', () => {
-            document.getElementById('rightSideVideo').play();
-        });
+        if(document.getElementById('leftSideVideo')){
+            document.getElementById('rightSideVideo').muted = false;
+            document.getElementById('rightSideVideo').volume = 0.3;
+            document.getElementById('rightSideVideo').addEventListener('ended', () => {
+                document.getElementById('rightSideVideo').play();
+            });
+        }
     }, 4400);
 });
 
