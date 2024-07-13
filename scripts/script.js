@@ -217,7 +217,7 @@ document.getElementById('botonDer').addEventListener('click', () => {
         document.getElementById('logoCarga2').muted = false;
     }, 100);
     setTimeout(() => {
-        if(document.getElementById('leftSideVideo')){
+        if(document.getElementById('rightSideVideo')){
             document.getElementById('rightSideVideo').muted = false;
             document.getElementById('rightSideVideo').volume = 0.3;
             document.getElementById('rightSideVideo').addEventListener('ended', () => {
