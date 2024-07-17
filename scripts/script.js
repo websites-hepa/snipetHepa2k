@@ -291,12 +291,16 @@ function conexionAPI() {
 }
 
 function pulsacionBoton() {
+    // Quita las clases de animación después de 200ms
     setTimeout(() => {
-        document.getElementById('botonesSlide').classList.remove('animate__animated','animate__heartBeat');
-    }, 2000);
+        document.getElementById('botonesSlide').classList.remove('animate__animated', 'animate__heartBeat');
+    }, 500);
+
+    // Agrega las clases de animación después de 300ms (100ms después de quitar las clases)
     setTimeout(() => {
-        document.getElementById('botonesSlide').classList.add('animate__animated','animate__heartBeat');
-    }, 200);
+        document.getElementById('botonesSlide').classList.add('animate__animated', 'animate__heartBeat');
+    }, 3000);
 }
 
-setInterval(pulsacionBoton(),1000);
+// Ejecuta pulsacionBoton cada 1000ms
+setInterval(pulsacionBoton, 4000);
